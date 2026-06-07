@@ -1,0 +1,10 @@
+{
+  "name": "@agennext/agent-business",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "typecheck": "echo typecheck",
+    "build": "echo build",
+    "conformance": "echo conformance"
+  }
+}
