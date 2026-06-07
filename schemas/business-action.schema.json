@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agennext.com/schemas/agent-business/business-action.schema.json",
+  "title": "BusinessAction",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "tenant", "actor", "owner", "businessObject", "policyRefs", "intendedOutcome", "traceId", "timestamp"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "tenant": { "type": "string", "minLength": 1 },
+    "actor": { "type": "string", "minLength": 1 },
+    "owner": { "type": "string", "minLength": 1 },
+    "businessObject": { "type": "string", "minLength": 1 },
+    "policyRefs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "policy", "version", "required"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "policy": { "type": "string", "minLength": 1 },
+          "version": { "type": "string", "minLength": 1 },
+          "required": { "type": "boolean" }
+        }
+      }
+    },
+    "intendedOutcome": { "type": "string", "minLength": 1 },
+    "traceId": { "type": "string", "minLength": 1 },
+    "timestamp": { "type": "string", "format": "date-time" }
+  }
+}
